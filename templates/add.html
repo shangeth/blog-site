@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block title %}Add Post{% endblock %}
+{% block body %}
+
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/contact-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Add your Blog</h1>
+              <span class="subheading">Post it...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <form name="sentMessage" id="contactForm" method="POST" action="{{ url_for('add') }}" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="title" name="title" id="title" required data-validation-required-message="Enter a title for your blog">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Subtitle</label>
+                <input type="text" class="form-control" placeholder="subtitle" name="subtitle" id="subtitle" required data-validation-required-message="Enter a subtitle for your blog">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Author</label>
+                <input type="text" class="form-control" placeholder="author name" name="author" id="author" required data-validation-required-message="Enter the author name for your blog">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                  <label>Blog Content</label>
+                <textarea rows="5" class="form-control" placeholder="Type your blog here..." name="content" id="content" required data-validation-required-message="Type your blog post"></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit your Blog</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+{% endblock %}
