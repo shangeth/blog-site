@@ -4,7 +4,7 @@ from models import *
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://odsvlqckromdtx:aabce53cdcb5040d092e396505cfe6064cde7f7ea79d811dcb28338687bddf37@ec2-54-221-192-231.compute-1.amazonaws.com:5432/d6vulp02317s80'
+app.config['SQLALCHEMY_DATABASE_URI'] = '' #Databse URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
